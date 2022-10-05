@@ -1,30 +1,53 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Contact.hpp"
+
+using namespace std;
 
 int main()
-{
-    setlocale(LC_ALL, "");
-    std::vector<std::string> students;
-    std::string buffer = "";
+{   
+    string first;
+    string search = "search";
+    string add = "add";
+    string exit = "exit";
 
-    std::cout << "Вводите фамилии студентов. "
-         << "По окончание фамилий введите пустую строку" << std::endl;
+    string name_of_contact;
+    string nickname;
+    string last_name_of_contact;
+    int index_of_contact;
 
-    do {
-        std::getline(std::cin, buffer);
-        if(buffer.size() > 0) {
-            students.push_back(buffer);
-        }
-    } while (buffer != "");
-
-
-    unsigned int vector_size = students.size();
-    std::cout << "Ваш вектор" << std::endl; 
-    for (int i = 0; i < vector_size; i++) {
-        std::cout << students[i] << std::endl;
-    }
     
-    return 0;
+    do
+    {   
+        cin >> first;
+
+        if (first == add) 
+        {
+          Contact adding_new;
+
+        cout << "Введите имя: ";
+        cin >> name_of_contact;
+        cout << "Pull last name: ";
+        cin >> last_name_of_contact;
+        cout << "Pull the nickname: ";
+        cin >> nickname;
+        cout << "Pull the number: ";
+        cin >> index_of_contact;
+
+        adding_new.set_first_name(name_of_contact);
+        adding_new.set_last_name(last_name_of_contact);
+        adding_new.set_nickname(nickname);
+        adding_new.set_number(index_of_contact);    
+
+        cout << "Новый контакт добавлен " << adding_new.get_first_name() << " " 
+        << adding_new.get_last_name() << " " << adding_new.get_nickname() << " " 
+        << adding_new.get_number() << endl;  
+        } 
+
+
+    } while (first != exit);
+
+
 }
 
