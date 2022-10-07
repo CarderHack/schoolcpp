@@ -7,7 +7,7 @@ class Contact
     std::string last_name;
     std::string nickname;
 
-    int number;
+    std::string number;
 
     public:
 
@@ -35,11 +35,11 @@ class Contact
         return nickname;
     }
 
-    void set_number(int index) {
+    void set_number(std::string index) {
         number = index;
     }
 
-    int get_number() {
+    std::string get_number() {
         return number;
     }
 

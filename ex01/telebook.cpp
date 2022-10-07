@@ -2,8 +2,11 @@
 #include <vector>
 #include <string>
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
+
 
 using namespace std;
+
 
 int main()
 {   
@@ -11,22 +14,25 @@ int main()
     string search = "search";
     string add = "add";
     string exit = "exit";
+    int count = 0;
 
     string name_of_contact;
     string nickname;
     string last_name_of_contact;
-    int index_of_contact;
+    string index_of_contact;
+
 
     
     do
     {   
         cin >> first;
+        Search all_contacts;
 
         if (first == add) 
         {
-          Contact adding_new;
+        Contact adding_new;
 
-        cout << "Введите имя: ";
+        cout << "Pull name: ";
         cin >> name_of_contact;
         cout << "Pull last name: ";
         cin >> last_name_of_contact;
@@ -40,10 +46,20 @@ int main()
         adding_new.set_nickname(nickname);
         adding_new.set_number(index_of_contact);    
 
-        cout << "Новый контакт добавлен " << adding_new.get_first_name() << " " 
+        cout << "The new contact has been created " << adding_new.get_first_name() << " " 
         << adding_new.get_last_name() << " " << adding_new.get_nickname() << " " 
-        << adding_new.get_number() << endl;  
-        } 
+        << adding_new.get_number() << endl;
+
+        string string_of_contact = name_of_contact + last_name_of_contact + nickname + index_of_contact;
+
+
+        all_contacts.set_new_contact(string_of_contact);
+
+        } else if (first == "search") {
+
+          all_contacts.get_all_info();
+         
+        }
 
 
     } while (first != exit);
