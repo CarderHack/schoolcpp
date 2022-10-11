@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
@@ -26,20 +25,20 @@ int main()
     {   
         cin >> first;
         Search all_contacts;
+        Contact adding_new;
 
         if (first == add) 
         { 
         
-        Contact adding_new;
-        
-        
-
         cout << "Pull name: ";
         cin >> name_of_contact;
+
         cout << "Pull last name: ";
         cin >> last_name_of_contact;
+
         cout << "Pull the nickname: ";
         cin >> nickname;
+
         cout << "Pull the number: ";
         cin >> index_of_contact;
 
@@ -57,13 +56,18 @@ int main()
 
         all_contacts.set_new_contact(string_of_contact);
 
-        } else if (first == "search") {
-
-		  all_contacts.set_new_contact("ну ты долбаеб");
-          all_contacts.get_all_info();
-         
         }
+        
+        if (first == search) {
 
+        string vse_contacty = name_of_contact;
+
+        cout << vse_contacty << endl;
+
+		all_contacts.set_new_contact(vse_contacty);
+        all_contacts.get_all_info();
+
+        }
 
     } while (first != exit);
 
