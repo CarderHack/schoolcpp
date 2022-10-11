@@ -14,7 +14,6 @@ int main()
     string search = "search";
     string add = "add";
     string exit = "exit";
-    int count = 0;
 
     string name_of_contact;
     string nickname;
@@ -60,6 +59,7 @@ int main()
 
         } else if (first == "search") {
 
+		  all_contacts.set_new_contact("ну ты долбаеб");
           all_contacts.get_all_info();
          
         }
