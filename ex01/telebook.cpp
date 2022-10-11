@@ -29,8 +29,11 @@ int main()
         Search all_contacts;
 
         if (first == add) 
-        {
+        { 
+        
         Contact adding_new;
+        
+        
 
         cout << "Pull name: ";
         cin >> name_of_contact;
@@ -50,7 +53,7 @@ int main()
         << adding_new.get_last_name() << " " << adding_new.get_nickname() << " " 
         << adding_new.get_number() << endl;
 
-        string string_of_contact = name_of_contact + last_name_of_contact + nickname + index_of_contact;
+        string string_of_contact = name_of_contact + " " + last_name_of_contact + " " + nickname + " " + index_of_contact;
 
 
         all_contacts.set_new_contact(string_of_contact);
@@ -64,6 +67,7 @@ int main()
 
     } while (first != exit);
 
+    return 0;
 
 }
 
