@@ -12,13 +12,17 @@ class Search{
     public:
         void set_new_contact(std::string info) {
 
-            n++;
-
+           list[0] = info;
+           n++;
+           
         }  
 
-        int get_all_info() {
+        std::string get_all_info() {
 
-           std::cout << n;
+            for (int i = 0; i < n; i++){ 
+           std::cout << list[i] << std::endl;
+            }
+           
             
         }
 };
