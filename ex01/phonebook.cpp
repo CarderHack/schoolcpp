@@ -28,23 +28,17 @@ int main(){
             cout << "Number: "; cin >> number;
 
             a.set_name(name); a.set_surname(surname); a.set_number(number);
-            arr.set_info(a.get_name(), a.get_surname(), a.get_number());
+            arr.set_info(a.get_name(), a.get_surname(), a.get_number(), count);
 
             count++;
         } else if(command == "search") {
 
             arr.get_info();
 
-
-
         } else
             cout << "error command"<< endl;
 
-        
-
     }while(command != "exit");
-
-
 
     return 0;
 }
